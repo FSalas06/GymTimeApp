@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="GymTimeApp.Views.Dashboard"
+    xmlns:views="clr-namespace:GymTimeApp.Views"
+    Title="Gym Time App">
+    <TabbedPage.Children>
+        <NavigationPage Title="tab">
+            <x:Arguments>
+                <views:RoutineView />
+            </x:Arguments>
+        </NavigationPage>
+        <!--<NavigationPage Title="Clases">
+            <x:Arguments>
+                <views:RoutineView />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Nutricion">
+            <x:Arguments>
+                <views:RoutineView />
+            </x:Arguments>
+        </NavigationPage>-->
+    </TabbedPage.Children>
+</TabbedPage>
