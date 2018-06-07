@@ -70,7 +70,6 @@ namespace GymTimeApp.ViewModels
 			BackRoutineList = new ObservableCollection<Routine>(FillRoutine());         
 			EditValueRoutineCommand = new Command<Routine>(EditValueRoutine);
 			GetSections();
-
 		}
 
 		private async void EditValueRoutine(Routine obj)
@@ -165,7 +164,5 @@ namespace GymTimeApp.ViewModels
 			StepSection = BackRoutineList.OrderByDescending(r => r.Sections).FirstOrDefault().Sections;
 			NumStep = 1;
 		}
-
-        
 	}
 }
