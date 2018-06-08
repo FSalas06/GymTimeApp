@@ -12,7 +12,7 @@ namespace GymTimeApp.LocalData
 
         public ServicesDataBase()
         {
-			bd = App.DB;
+			//bd = App.DB;
         }
 
 		public virtual async Task<T> AddToTableAsync(T data)

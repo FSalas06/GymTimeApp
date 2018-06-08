@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using GymTimeApp.ViewModels.Shared;
 using GymTimeApp.Views;
 using Xamarin.Forms;
 
@@ -73,7 +74,7 @@ namespace GymTimeApp.ViewModels.Login
         /// <param name="obj">Object.</param>
 		private void ValidateLogin(object obj)
         {
-			Application.Current.MainPage = new Dashboard();
+            Application.Current.MainPage = new Dashboard();
         }
 		#endregion
 

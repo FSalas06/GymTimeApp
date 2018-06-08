@@ -1,11 +1,8 @@
 using System;
 using GymTimeApp.LocalData;
-using GymTimeApp.Views;
-using GymTimeApp.Views.Login;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GymTimeApp
 {
     public partial class App : Application
@@ -16,7 +13,7 @@ namespace GymTimeApp
         {
             InitializeComponent();
 
-			MainPage = new Dashboard();
+            MainPage = new Views.Dashboard();
         }
 
 		public static DataBase DB

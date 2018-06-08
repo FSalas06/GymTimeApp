@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Xamarin.Forms;
 
-namespace GymTimeApp.ViewModels
+namespace GymTimeApp.ViewModels.Shared
 {
-	public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
 		#region public properties
         /// <summary>
@@ -38,7 +37,12 @@ namespace GymTimeApp.ViewModels
         /// </summary>
         public virtual async void OnAppearing()
         {
-            await Task.Delay(0);
+            
+        }
+
+        public virtual async void OnDisappearing()
+        {
+
         }
         #endregion
 

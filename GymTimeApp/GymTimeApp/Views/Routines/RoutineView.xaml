@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="GymTimeApp.Views.Routines.RoutineView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:common="clr-namespace:GymTimeApp.Common"
+    xmlns:sf="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    x:Name="Parent">
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <common:StepProgressBarControl
+                x:Name="stepBar"
+                Grid.Row="0"
+                StepColor="Black"
+                StepSelected="{Binding NumStep}"
+                Steps="{Binding StepSection}" />
+            <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand">
+                <sf:SfListView
+                    AllowSwiping="true"
+                    IsScrollBarVisible="false"
+                    ItemSize="120"
+                    ItemSpacing="10"
+                    ItemsSource="{Binding RoutineList}"
+                    SelectionBackgroundColor="Gray"
+                    SelectionGesture="Hold"
+                    SelectionMode="Multiple">
+                    <sf:SfListView.RightSwipeTemplate>
+                        <DataTemplate x:Name="LeftSwipeTemplate">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Path=BindingContext.EditValueRoutineCommand,
+                                                              Source={x:Reference Name=Parent}}"
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1" />
+                                    </StackLayout.GestureRecognizers>
+                                    <Image
+                                        WidthRequest="35"
+                                        HeightRequest="35"
+                                        BackgroundColor="Transparent" />
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </sf:SfListView.RightSwipeTemplate>
+                    <sf:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <common:CardView>
+                                    <Grid Padding="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            WidthRequest="50"
+                                            HeightRequest="50" />
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand">
+                                            <Label
+                                                HorizontalOptions="Fill"
+                                                FontAttributes="Bold"
+                                                FontSize="Large"
+                                                Text="{Binding NameExercise}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="Fill"
+                                                FontSize="Small"
+                                                Text="{Binding Description}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                    </Grid>
+                                </common:CardView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </sf:SfListView.ItemTemplate>
+                </sf:SfListView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -25,6 +25,9 @@
     <Folder Include="Views\Login\" />
     <Folder Include="Interfaces\" />
     <Folder Include="LocalData\" />
+    <Folder Include="ViewModels\Shared\" />
+    <Folder Include="ViewModels\Routines\" />
+    <Folder Include="Views\Routines\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\SignUp\Login.xaml" />
