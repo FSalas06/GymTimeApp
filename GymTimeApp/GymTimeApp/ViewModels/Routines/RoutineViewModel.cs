@@ -76,9 +76,9 @@ namespace GymTimeApp.ViewModels.Routines
             GetSections();
         }
 
-        private async void EditValueRoutine(Routine obj)
+        private void EditValueRoutine(Routine obj)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new EditRoutineView());
+            GoInsideTab(new EditRoutineView());
         }
 
         private ObservableCollection<Routine> FillRoutine()

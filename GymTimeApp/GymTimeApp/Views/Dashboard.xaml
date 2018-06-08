@@ -6,7 +6,7 @@
     xmlns:views="clr-namespace:GymTimeApp.Views"
     Title="Gym Time App">
     <TabbedPage.Children>
-        <NavigationPage Title="Edit" Icon="ic_weight.png">
+        <NavigationPage Title="Routine" Icon="ic_weight.png">
             <x:Arguments>
                 <views:Routines.RoutineView />
             </x:Arguments>

@@ -44,6 +44,11 @@ namespace GymTimeApp.ViewModels.Shared
         {
 
         }
+
+        public async static void GoInsideTab(Page page)
+        {
+            await (Application.Current.MainPage as TabbedPage).CurrentPage.Navigation.PushAsync(page);
+        }
         #endregion
 
         #region protected methods

@@ -7,7 +7,7 @@ namespace GymTimeApp.Common
 	{
         public CardView()
         {
-			HasShadow = true;
+            HasShadow = false;
 			CornerRadius = 6;
 			BackgroundColor = Color.Transparent;
 			BorderColor = Color.Yellow;

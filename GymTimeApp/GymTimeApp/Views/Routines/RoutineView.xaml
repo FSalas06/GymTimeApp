@@ -7,7 +7,7 @@
     xmlns:sf="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     x:Name="Parent">
     <ContentPage.Content>
-        <Grid Padding="10">
+        <Grid Padding="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="1*" />
@@ -28,7 +28,7 @@
                     ItemSize="120"
                     ItemSpacing="10"
                     ItemsSource="{Binding RoutineList}"
-                    SelectionBackgroundColor="Gray"
+                    SelectionBackgroundColor="Transparent"
                     SelectionGesture="Hold"
                     SelectionMode="Multiple">
                     <sf:SfListView.RightSwipeTemplate>
